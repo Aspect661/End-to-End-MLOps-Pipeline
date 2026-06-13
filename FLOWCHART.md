@@ -1,12 +1,12 @@
 ```mermaid
 graph TD
     subgraph CONFIG["🔧 CONFIGURATION LAYER"]
-        YAML1["📄 config.yaml<br/>(Paths & URLs)"]
-        YAML2["📄 schema.yaml<br/>(Data Structure)"]
-        YAML3["📄 params.yaml<br/>(Hyperparameters)"]
+        YAML1["config.yaml<br/>(Paths & URLs)"]
+        YAML2["schema.yaml<br/>(Data Structure)"]
+        YAML3["params.yaml<br/>(Hyperparameters)"]
     end
     
-    subgraph MANAGER["⚙️ CONFIGURATION MANAGER & ENTITIES"]
+    subgraph MANAGER["CONFIGURATION MANAGER & ENTITIES"]
         CM["ConfigurationManager<br/>(Parse & Validate YAML)"]
         
         DIC["DataIngestionConfig<br/>@dataclass"]
@@ -29,14 +29,14 @@ graph TD
         MT["ModelTrainer<br/>Component"]
         ME["ModelEvaluation<br/>Component"]
         
-        DI -->|raw_data.csv| A1["💾 data/raw/"]
-        DVL -->|validation_status.txt| A2["💾 reports/"]
-        DTF -->|train.csv<br/>test.csv| A3["💾 data/processed/"]
-        MT -->|model.pkl| A4["💾 models/"]
-        ME -->|metrics.json| A5["💾 reports/"]
+        DI -->|raw_data.csv| A1["data/raw/"]
+        DVL -->|validation_status.txt| A2["reports/"]
+        DTF -->|train.csv<br/>test.csv| A3["data/processed/"]
+        MT -->|model.pkl| A4["models/"]
+        ME -->|metrics.json| A5["reports/"]
     end
     
-    subgraph STAGES["🚀 PIPELINE STAGES & ENTRY POINT"]
+    subgraph STAGES["PIPELINE STAGES & ENTRY POINT"]
         S01["Stage 01<br/>Data Ingestion"]
         S02["Stage 02<br/>Data Validation"]
         S03["Stage 03<br/>Data Transformation"]
@@ -49,11 +49,11 @@ graph TD
         S04 --> S05
     end
     
-    subgraph TRACKING["📊 EXPERIMENT TRACKING"]
+    subgraph TRACKING["EXPERIMENT TRACKING"]
         MLFLOW["MLflow & DagsHub<br/>(Model Registry)"]
     end
     
-    ENTRY["▶️ main.py<br/>(Entry Point)"]
+    ENTRY["main.py<br/>(Entry Point)"]
     
     %% Data flow from CONFIG to MANAGER
     YAML1 --> CM

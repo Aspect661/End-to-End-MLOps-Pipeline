@@ -2,7 +2,7 @@ import os
 import urllib.request as request
 from src.datascience import logger
 import zipfile
-from src.datascience.entity.config_entity import (DataValidationConfig)
+from src.datascience.entity.config_entity import (DataValidationConfig) 
 import pandas as pd
 
 class DataValidation:

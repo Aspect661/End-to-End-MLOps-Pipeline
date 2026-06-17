@@ -201,18 +201,6 @@ The Flask app provides a clean interface for real-time inference:
 
 ---
 
-## Results
-
-| Metric | Value |
-|---|---|
-| RMSE | _fill in_ |
-| MAE | _fill in_ |
-| R² | _fill in_ |
-
-> Results are logged per-run in MLflow. The table above reflects the best run.
-
----
-
 ## 📝 License
 
 This project is licensed under the MIT License.
